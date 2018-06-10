@@ -8,12 +8,6 @@
 
 import Foundation
 
-extension Collection {
-    var oneAndOnly: Element? {
-        return count == 1 ? first : nil
-    }
-}
-
 struct Concentration {
     
     private(set) var cards = [Card]()
@@ -37,6 +31,8 @@ struct Concentration {
             let card = Card()
             cards += [card, card]
         }
+        
+        cards.shuffle()
     }
     
     mutating func chooseCard(at index: Int) {
